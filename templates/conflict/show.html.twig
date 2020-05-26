@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conflict{% endblock %}
+
+{% block body %}
+    <h1>Conflict</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ conflict.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ conflict.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ conflict.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('conflict_index') }}">back to list</a>
+
+    <a href="{{ path('conflict_edit', {'id': conflict.id}) }}">edit</a>
+
+    {{ include('conflict/_delete_form.html.twig') }}
+{% endblock %}

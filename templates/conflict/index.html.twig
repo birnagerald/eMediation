@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conflict index{% endblock %}
+
+{% block body %}
+    <h1>Conflict index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conflict in conflicts %}
+            <tr>
+                <td>{{ conflict.id }}</td>
+                <td>{{ conflict.title }}</td>
+                <td>{{ conflict.description }}</td>
+                <td>
+                    <a href="{{ path('conflict_show', {'id': conflict.id}) }}">show</a>
+                    <a href="{{ path('conflict_edit', {'id': conflict.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('conflict_new') }}">Create new</a>
+{% endblock %}

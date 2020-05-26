@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Conflict{% endblock %}
+
+{% block body %}
+    <h1>Create new Conflict</h1>
+
+    {{ include('conflict/_form.html.twig') }}
+
+    <a href="{{ path('conflict_index') }}">back to list</a>
+{% endblock %}

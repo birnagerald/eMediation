@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ u93755699@home739644471.1and1-data.host:~/emediation --exclude-from=.gitignore --exclude=".*"

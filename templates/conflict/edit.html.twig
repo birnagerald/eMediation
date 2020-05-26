@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Conflict{% endblock %}
+
+{% block body %}
+    <h1>Edit Conflict</h1>
+
+    {{ include('conflict/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('conflict_index') }}">back to list</a>
+
+    {{ include('conflict/_delete_form.html.twig') }}
+{% endblock %}
